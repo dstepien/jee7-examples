@@ -14,7 +14,7 @@ public class DatePrinterBean implements DatePrinter {
   @Inject
   Logger logger;
 
-  @Inject
+  @Inject @SimpleDate
   DateGenerator dateGenerator;
 
   @Override
