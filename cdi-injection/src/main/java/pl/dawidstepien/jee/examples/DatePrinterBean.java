@@ -5,11 +5,10 @@ import java.util.logging.Logger;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.interceptor.Interceptors;
 
 @Stateless
 @Remote(DatePrinter.class)
-@Interceptors(ProfileInterceptor.class)
+@Profiling
 public class DatePrinterBean implements DatePrinter {
 
   @Inject

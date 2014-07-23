@@ -5,8 +5,10 @@ import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
+import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
 
+@Interceptor @Profiling
 public class ProfileInterceptor {
 
   @Inject
