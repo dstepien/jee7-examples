@@ -2,13 +2,14 @@ package pl.dawidstepien.jee.examples;
 
 import java.util.logging.Logger;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.interceptor.Interceptors;
 
 @Stateless
 @Remote(DatePrinter.class)
+@Interceptors(ProfileInterceptor.class)
 public class DatePrinterBean implements DatePrinter {
 
   @Inject
@@ -20,10 +21,5 @@ public class DatePrinterBean implements DatePrinter {
   @Override
   public void printDate() {
     logger.info("Today's date: " + dateGenerator.generateDate());
-  }
-
-  @PostConstruct
-  public void sayHello() {
-    logger.info("HI, THIS IS YOUR DATE PRINTER");
   }
 }
