@@ -2,18 +2,22 @@ package pl.dawidstepien.jee.examples;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.inject.Inject;
 
 @SimpleDate
 public class SimpleDateGenerator implements DateGenerator {
 
-  @Inject @SimpleDatePattern
-  private String pattern;
+  @Inject
+  private SimpleDateFormat simpleDateFormat;
 
   @Override
   public String generateDate() {
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-    return simpleDateFormat.format(Calendar.getInstance().getTime());
+    return simpleDateFormat.format(getCurrentDate());
+  }
+
+  private Date getCurrentDate() {
+    return Calendar.getInstance().getTime();
   }
 }
