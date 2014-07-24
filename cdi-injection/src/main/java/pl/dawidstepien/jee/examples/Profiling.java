@@ -1,6 +1,5 @@
 package pl.dawidstepien.jee.examples;
 
-import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
@@ -11,5 +10,5 @@ import javax.interceptor.InterceptorBinding;
 
 @InterceptorBinding
 @Retention(RUNTIME)
-@Target({TYPE, METHOD})
+@Target({TYPE})
 public @interface Profiling { }
