@@ -19,6 +19,6 @@ public class DatePrinterBean implements DatePrinter {
 
   @Override
   public void printDate() {
-    logger.info("Today's date: " + dateGenerator.generateDate());
+    logger.info(dateGenerator.generateDate());
   }
 }

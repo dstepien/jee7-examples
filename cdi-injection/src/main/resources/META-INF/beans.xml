@@ -9,4 +9,7 @@
     <interceptors>
         <class>pl.dawidstepien.jee.examples.ProfileInterceptor</class>
     </interceptors>
+    <decorators>
+        <class>pl.dawidstepien.jee.examples.SimpleDateGeneratorPrefixDecorator</class>
+    </decorators>
 </beans>
